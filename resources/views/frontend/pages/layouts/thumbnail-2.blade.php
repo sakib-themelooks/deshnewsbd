@@ -1,0 +1,17 @@
+<div class="{{$section_item->colmd}} col-xs-12" style="margin:{{$section_item->margin}};padding:{{$section_item->padding}};">
+    @include(('frontend.pages.layouts.title').$section_item->item_title_number)
+    <?php $i = 1;?>
+    <div class="row"> 
+        @foreach($section_item->newsByCategory->take($section_item->item_number) as $section_news)
+            <a class="col-md-{{$section_item->colxs}} col-xs-12 mixsection_news_img mmb" href="{{route('newsDetails', [$section_news->getCategory->slug, $section_news->id])}}">
+                <div class="col-md-9 col-xs-9 grid77" style="background:{{$section_item->bg_text}};color:{{$section_item->bt_text}};">
+                    @include('frontend.pages.layouts.ititle')
+                </div>
+                <div class="col-md-3 col-xs-3 imix pps videos">
+                    @include('frontend.pages.layouts.img')
+                </div>
+            </a>
+            <?php $i++; ?>
+        @endforeach
+    </div>
+</div>

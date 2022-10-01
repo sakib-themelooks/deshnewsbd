@@ -1,0 +1,1 @@
+<h1 class="box_text_color-1">{{$news->news_title}}</h1>
